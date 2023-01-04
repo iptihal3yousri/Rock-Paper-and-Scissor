@@ -1,0 +1,44 @@
+import random
+
+
+# 1.Rock   2.Paper   3.Scissor
+# 1 and 2   ---->   2 wins
+# 2 and 3   ---->   3 wins
+# 3 and 1   ---->   1 wins
+
+
+def winner():  # function to determine who wins the game this time
+    b = True
+    while b:
+        user_val = int(input("please, enter your choice : "))
+        computer_val = random.randrange(1, 4)
+        if user_val == 1 and computer_val == 2:
+            print("The user choice is : 'Rock'\nThe computer choice is : 'Paper'\nComputer win this time!")
+        elif user_val == 2 and computer_val == 1:
+            print("The user choice is : 'Paper'\nThe computer choice is : 'Rock'\nUser win this time!")
+        elif user_val == 2 and computer_val == 3:
+            print("The user choice is : 'Paper'\nThe computer choice is : 'Scissor'\nComputer win this time!")
+        elif user_val == 3 and computer_val == 2:
+            print("The user choice is : 'Scissor'\nThe computer choice is : 'Paper'\nUser win this time!")
+        elif user_val == 3 and computer_val == 1:
+            print("The user choice is : 'Scissor'\nThe computer choice is : 'Rock'\nComputer win this time!")
+        elif user_val == 1 and computer_val == 3:
+            print("The user choice is : 'Rock'\nThe computer choice is : 'Scissor'\nUser win this time!")
+        elif user_val == computer_val:
+            print("user and computer had the same choice, no one win!")
+        else:
+            print("invalied")
+
+        print("\n" + "-" * 50 + "\n")
+
+        s = input("if you want to play one more time enter 'yes', else enter 'no' : ")
+        if s.lower() == "yes":  # this if condition determine if the loop should be repeated any more or not based on the user choice
+            b = True
+        else:
+            b = False
+
+
+print("Hello in the Rock, Paper and Scissors game.")
+print("for Rock enter number 1\nfor Paper enter number2\nfor Scissor enter number 3")
+print("\n" + "-" * 50 + "\n")
+winner()
